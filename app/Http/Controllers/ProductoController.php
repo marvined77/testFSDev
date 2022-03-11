@@ -59,33 +59,4 @@ class ProductoController extends Controller
         return view('producto.edit', compact('producto','id_tabla'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Producto $producto
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Producto $producto)
-    {
-        request()->validate(Producto::$rules);
-
-        $producto->update($request->all());
-
-        return redirect()->route('productos.index')
-            ->with('success', 'Producto updated successfully');
-    }
-
-    /**
-     * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Exception
-     */
-    public function destroy($id)
-    {
-        $producto = Producto::find($id)->delete();
-
-        return redirect()->route('productos.index')
-            ->with('success', 'Producto deleted successfully');
-    }
 }

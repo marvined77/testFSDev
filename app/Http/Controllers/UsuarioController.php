@@ -32,23 +32,7 @@ class UsuarioController extends Controller
         return view('usuario.create', compact('usuario'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        request()->validate(Usuario::$rules);
-
-        $usuario = Usuario::create($request->all());
-
-        return redirect()->route('usuarios.index')
-            ->with('success', 'Usuario created successfully.');
-    }
-
-    /**
+     /**
      * Display the specified resource.
      *
      * @param  int $id
@@ -73,35 +57,5 @@ class UsuarioController extends Controller
         $id_tabla = $id;
 
         return view('usuario.edit', compact('usuario', 'id_tabla'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Usuario $usuario
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Usuario $usuario)
-    {
-        request()->validate(Usuario::$rules);
-
-        $usuario->update($request->all());
-
-        return redirect()->route('usuarios.index')
-            ->with('success', 'Usuario updated successfully');
-    }
-
-    /**
-     * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Exception
-     */
-    public function destroy($id)
-    {
-        $usuario = Usuario::find($id)->delete();
-
-        return redirect()->route('usuarios.index')
-            ->with('success', 'Usuario deleted successfully');
     }
 }

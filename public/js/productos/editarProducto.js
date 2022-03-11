@@ -13,7 +13,6 @@
     cantidad=datos.get('cantidad');
     precio=datos.get('precio');
     descripcion=datos.get('descripcion');
-    alert(sku+" "+nombre+" "+cantidad+" "+precio+" "+descripcion)
      var requestOptions = {
          method: 'PUT',
          redirect: 'follow'

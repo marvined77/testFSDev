@@ -24,17 +24,6 @@ class UsuarioApiController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $usuario = new Usuario();
-        return view('usuario.create', compact('usuario'));
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
@@ -59,18 +48,6 @@ class UsuarioApiController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $usuario = Usuario::find($id);
-
-        return view('usuario.show', compact('usuario'));
-    }
 
     /**
      * Show the form for editing the specified resource.

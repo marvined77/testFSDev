@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Usuario</span>
+                            <span class="card-title">Ver Usuario</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('usuarios.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('usuarios.index') }}"> Volver</a>
                         </div>
                     </div>
 
@@ -40,11 +40,6 @@
                             <strong>Email:</strong>
                             {{ $usuario->email }}
                         </div>
-                        <div class="form-group">
-                            <strong>Estado:</strong>
-                            {{ $usuario->estado }}
-                        </div>
-
                     </div>
                 </div>
             </div>

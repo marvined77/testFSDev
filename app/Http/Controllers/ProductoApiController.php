@@ -24,17 +24,6 @@ class ProductoApiController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $producto = new Producto();
-        return view('producto.create', compact('producto'));
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
@@ -47,19 +36,6 @@ class ProductoApiController extends Controller
         Producto::create($request->all());
 
         return response()->json(['Hecho' => 'GUARDADO POR API'], 200);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $producto = Producto::find($id);
-
-        return view('producto.show', compact('producto'));
     }
 
     /**
